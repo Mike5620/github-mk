@@ -26,4 +26,18 @@ class Comentario(models.Model):
 	def __unicode__(self):
 		return self.texto
 
+class Bebidas(models.Model):
+	nombre = models.CharField(max_length=150)
+	texto=models.TextField(help_text='Tu Comentario',verbose_name='Comentario')
+
+	def __unicode__(self):
+		return self.nombre
+
+class Comentario2(models.Model):
+	receta=models.ForeignKey(Receta)
+	texto=models.TextField(help_text='Tu Comentario',verbose_name='Comentario')
+
+	def __unicode__(self):
+		return self.texto
+
 # Bueno haber si se actualizo el programa
